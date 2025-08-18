@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="en">
-
-    
-<!-- Mirrored from themesbrand.com/minible/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Aug 2025 08:25:25 GMT -->
 <head>
         
         <meta charset="utf-8" />
-        <title>Login | Minible - Admin & Dashboard Template</title>
+        <title>Login | LaraCoreX</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -19,6 +16,23 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <style>
+            .authentication-bg{
+                background-color: #E3E2E0
+            }
+            .footer-logo {
+            height: 40px !important; /* Set default height */
+            width: auto; /* Maintain aspect ratio */
+            vertical-align: middle; /* Align with text */
+            }
+            
+            @media (max-width: 576px) {
+            .footer-logo {
+            height: 18px; /* Smaller on mobile */
+            }
+            }
+        </style>
 
     </head>
 
@@ -28,9 +42,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <a href="index.html" class="mb-5 d-block auth-logo">
-                                <img src="assets/images/logo-dark.png" alt="" height="22" class="logo logo-dark">
-                                <img src="assets/images/logo-light.png" alt="" height="22" class="logo logo-light">
+                            <a href="#" class="mb-5 d-block auth-logo">
+                                <img src="{{asset('assets/images/logo-site.png')}}" alt="" height="60" class="logo logo-dark">
+                                {{-- <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="22" class="logo logo-light"> --}}
                             </a>
                         </div>
                     </div>
@@ -42,14 +56,15 @@
                             <div class="card-body p-4"> 
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to Minible.</p>
+                                    <p class="text-muted">Sign in to continue to LaraCoreX.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="https://themesbrand.com/minible/layouts/index.html">
-        
+                                    <form method="POST" action="{{ route('login') }}">
+    
+                                        @csrf
                                         <div class="mb-3">
-                                            <label class="form-label" for="username">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                            <label class="form-label" for="username">Email</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Enter username" name="email" value="{{old('name')}}">
                                         </div>
                 
                                         <div class="mb-3">
@@ -57,11 +72,11 @@
                                                 <a href="auth-recoverpw.html" class="text-muted">Forgot password?</a>
                                             </div>
                                             <label class="form-label" for="userpassword">Password</label>
-                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="password" value="{{old('password')}}">
                                         </div>
                 
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="auth-remember-check">
+                                            <input type="checkbox" class="form-check-input" id="auth-remember-check" name="remember">
                                             <label class="form-check-label" for="auth-remember-check">Remember me</label>
                                         </div>
                                         
@@ -97,7 +112,7 @@
                                         </div>
 
                                         <div class="mt-4 text-center">
-                                            <p class="mb-0">Don't have an account ? <a href="auth-register.html" class="fw-medium text-primary"> Signup now </a> </p>
+                                            <p class="mb-0">Don't have an account ? <a href="{{route('register')}}" class="fw-medium text-primary"> Signup now </a> </p>
                                         </div>
                                     </form>
                                 </div>
@@ -105,10 +120,18 @@
                             </div>
                         </div>
 
+                        {{-- <div class="mt-5 text-center">
+                            <p>© <script>document.write(new Date().getFullYear())</script> LaraCoreX. Crafted with <i class="mdi mdi-heart text-danger"></i> by <img src="{{asset('assets/images/logo-1.jpg')}}"></p>
+                        </div> --}}
                         <div class="mt-5 text-center">
-                            <p>© <script>document.write(new Date().getFullYear())</script> Minible. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                            <p>
+                                © <script>
+                                    document.write(new Date().getFullYear())
+                                </script> LaraCoreX. Crafted with
+                                <i class="mdi mdi-heart text-danger"></i> by
+                                <img src="{{asset('assets/images/logo-1.jpg')}}" alt="Logo" class="footer-logo">
+                            </p>
                         </div>
-
                     </div>
                 </div>
                 <!-- end row -->
@@ -129,6 +152,4 @@
         <!-- <script src="assets/js/app.js"></script> -->
 
     </body>
-
-<!-- Mirrored from themesbrand.com/minible/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Aug 2025 08:25:25 GMT -->
 </html>

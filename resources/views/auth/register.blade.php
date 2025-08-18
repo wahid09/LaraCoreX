@@ -6,7 +6,7 @@
 <head>
         
         <meta charset="utf-8" />
-        <title>Register | Minible - Admin & Dashboard Template</title>
+        <title>Register | LaraCoreX - Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -19,6 +19,28 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <style>
+            .authentication-bg {
+                background-color: #E3E2E0
+            }
+        
+            .footer-logo {
+                height: 40px !important;
+                /* Set default height */
+                width: auto;
+                /* Maintain aspect ratio */
+                vertical-align: middle;
+                /* Align with text */
+            }
+        
+            @media (max-width: 576px) {
+                .footer-logo {
+                    height: 18px;
+                    /* Smaller on mobile */
+                }
+            }
+        </style>
 
     </head>
 
@@ -29,8 +51,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <a href="index.html" class="mb-5 d-block auth-logo">
-                                <img src="assets/images/logo-dark.png" alt="" height="22" class="logo logo-dark">
-                                <img src="assets/images/logo-light.png" alt="" height="22" class="logo logo-light">
+                                <img src="{{asset('assets/images/logo-site.png')}}" alt="" height="60" class="logo logo-dark">
                             </a>
                         </div>
                     </div>
@@ -46,21 +67,26 @@
                                     <p class="text-muted">Get your free Minible account now.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="https://themesbrand.com/minible/layouts/index.html">
-        
+                                    <form action="{{ route('register') }}" method="post">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label class="form-label" for="name">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter Your Name" value="{{old('name')}}" name="name">
+                                        </div>
+
                                         <div class="mb-3">
                                             <label class="form-label" for="useremail">Email</label>
-                                            <input type="email" class="form-control" id="useremail" placeholder="Enter email">        
-                                        </div>
-                
-                                        <div class="mb-3">
-                                            <label class="form-label" for="username">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                            <input type="email" class="form-control" id="useremail" placeholder="Enter Your Email" value="{{old('email')}}" name="email">        
                                         </div>
                 
                                         <div class="mb-3">
                                             <label class="form-label" for="userpassword">Password</label>
-                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">        
+                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="password">        
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="cpassword">Password</label>
+                                            <input type="password" class="form-control" id="cpassword" placeholder="Re-Type password" name="password_confirmation">
                                         </div>
 
                                         <div class="form-check">
@@ -100,7 +126,7 @@
                                         </div>
 
                                         <div class="mt-4 text-center">
-                                            <p class="text-muted mb-0">Already have an account ? <a href="auth-login.html" class="fw-medium text-primary"> Login</a></p>
+                                            <p class="text-muted mb-0">Already have an account ? <a href="{{route('login')}}" class="fw-medium text-primary"> Login</a></p>
                                         </div>
                                     </form>
                                 </div>
@@ -108,7 +134,13 @@
                             </div>
                         </div>
                         <div class="mt-5 text-center">
-                            <p>© <script>document.write(new Date().getFullYear())</script> Minible. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                            <p>
+                                © <script>
+                                    document.write(new Date().getFullYear())
+                                </script> LaraCoreX. Crafted with
+                                <i class="mdi mdi-heart text-danger"></i> by
+                                <img src="{{asset('assets/images/logo-1.jpg')}}" alt="Logo" class="footer-logo">
+                            </p>
                         </div>
 
                     </div>
