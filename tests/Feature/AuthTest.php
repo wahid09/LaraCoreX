@@ -18,7 +18,7 @@ it('can register a new user', function () {
         'password_confirmation' => 'password',
     ]);
 
-    $response->assertRedirect('/home'); // or route after registration
+    $response->assertRedirect('/'); // or route after registration
     $this->assertDatabaseHas('users', [
         'email' => 'john@example.com',
     ]);
@@ -45,7 +45,7 @@ it('can login with correct credentials', function () {
         'password' => 'password123',
     ]);
 
-    $response->assertRedirect('/home'); // or intended route
+    $response->assertRedirect('/'); // or intended route
     $this->assertAuthenticatedAs($user);
 });
 
