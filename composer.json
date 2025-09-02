@@ -13,6 +13,7 @@
         "laravel/fortify": "^1.28",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "santigarcor/laratrust": "^8.5",
         "spatie/laravel-permission": "^6.21"
     },
     "require-dev": {
