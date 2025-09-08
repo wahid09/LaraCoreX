@@ -42,9 +42,9 @@
 
                 <li class="menu-title">Apps</li>
                 <li>
-                    <a href="calendar.html" class="waves-effect">
+                    <a href="{{ route('feedback.index') }}" class="waves-effect">
                         <i class="uil-calender"></i>
-                        <span>Calendar</span>
+                        <span>Feedback</span>
                     </a>
                 </li>
             </ul>

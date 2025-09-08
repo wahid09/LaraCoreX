@@ -9,3 +9,139 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+}
+
+.empty-state i {
+    opacity: 0.5;
+}
+
+.feedback-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar img {
+    object-fit: cover;
+}
+/* Add these to your app.css */
+.comment-item {
+    background-color: #f8f9fa;
+}
+
+.comment-item:last-child {
+    margin-bottom: 0;
+}
+
+.admin-actions {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.375rem;
+}
+/* File preview styles */
+.file-item {
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.375rem;
+}
+
+.file-item:hover {
+    background-color: #e9ecef;
+}
+
+.file-item .file-name {
+    font-weight: 500;
+}
+
+/* Modal enhancements */
+.modal-content {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+/* Form enhancements */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Loading state */
+.btn:disabled {
+    cursor: not-allowed;
+}
+/* Feedback detail styles */
+.feedback-detail {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.comment-item {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.comment-item:last-child {
+    margin-bottom: 0;
+}
+
+.avatar img {
+    object-fit: cover;
+}
+
+/* Modal scrollbar styling */
+.feedback-detail::-webkit-scrollbar {
+    width: 6px;
+}
+
+.feedback-detail::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.feedback-detail::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.feedback-detail::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Card enhancements */
+.card {
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
